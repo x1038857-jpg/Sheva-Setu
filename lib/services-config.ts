@@ -1,0 +1,46 @@
+export const SERVICES = [
+  {
+    id: 1,
+    name_en: 'Driving License',
+    name_hi: 'ड्राइविंग लाइसेंस',
+    description_en: 'Apply for a new or renewed driving license.',
+    description_hi: 'नया या नवीनीकृत ड्राइविंग लाइसेंस के लिए आवेदन करें।',
+    requiredDocuments: ['Aadhaar Card', 'Address Proof', 'Age Proof'],
+    fields: [
+      { id: 'fullName', name_en: 'Full Name', name_hi: 'पूरा नाम', type: 'text' },
+      { id: 'dateOfBirth', name_en: 'Date of Birth', name_hi: 'जन्म तिथि', type: 'date' },
+      { id: 'aadhaarNumber', name_en: 'Aadhaar Number', name_hi: 'आधार संख्या', type: 'text' },
+      { id: 'address', name_en: 'Address', name_hi: 'पता', type: 'textarea' },
+      { id: 'mobileNumber', name_en: 'Mobile Number', name_hi: 'मोबाइल नंबर', type: 'tel' },
+    ],
+  },
+  {
+    id: 2,
+    name_en: 'Passport',
+    name_hi: 'पासपोर्ट',
+    description_en: 'Apply for a new passport.',
+    description_hi: 'नया पासपोर्ट के लिए आवेदन करें।',
+    requiredDocuments: ['Aadhaar Card', 'Birth Certificate', 'Photo'],
+    fields: [
+      { id: 'fullName', name_en: 'Full Name', name_hi: 'पूरा नाम', type: 'text' },
+      { id: 'dateOfBirth', name_en: 'Date of Birth', name_hi: 'जन्म तिथि', type: 'date' },
+      { id: 'aadhaarNumber', name_en: 'Aadhaar Number', name_hi: 'आधार संख्या', type: 'text' },
+      { id: 'fatherName', name_en: 'Father Name', name_hi: 'पिता का नाम', type: 'text' },
+      { id: 'motherName', name_en: 'Mother Name', name_hi: 'माता का नाम', type: 'text' },
+    ],
+  },
+  {
+    id: 3,
+    name_en: 'Ration Card',
+    name_hi: 'राशन कार्ड',
+    description_en: 'Apply for ration card benefits.',
+    description_hi: 'राशन कार्ड लाभ के लिए आवेदन करें।',
+    requiredDocuments: ['Aadhaar Card', 'Income Proof', 'Address Proof'],
+    fields: [
+      { id: 'fullName', name_en: 'Full Name', name_hi: 'पूरा नाम', type: 'text' },
+      { id: 'familyMembers', name_en: 'Family Members', name_hi: 'परिवार के सदस्य', type: 'number' },
+      { id: 'annualIncome', name_en: 'Annual Income', name_hi: 'वार्षिक आय', type: 'number' },
+      { id: 'address', name_en: 'Address', name_hi: 'पता', type: 'textarea' },
+    ],
+  },
+];
