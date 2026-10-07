@@ -1,13 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase, getCurrentUser } from '@/lib/supabase';
+import { supabase } from '@/lib/supabase';
 
 export async function POST(request: NextRequest) {
   try {
-    const user = await getCurrentUser();
-    if (!user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
-
     const body = await request.json();
     const { email, password } = body;
 
@@ -22,6 +17,10 @@ export async function POST(request: NextRequest) {
 
     if (error) {
       return NextResponse.json({ error: error.message }, { status: 401 });
+    }
+
+    if (!data.user.email_confirmed_at) {
+      return NextResponse.json({ error: 'Please verify your email before logging in.' }, { status: 403 });
     }
 
     const response = NextResponse.json({
